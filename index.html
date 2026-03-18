@@ -788,7 +788,7 @@
     <li><a href="#about">About</a></li>
     <li><a href="#skills">Skills</a></li>
     <li><a href="#experience">Experience</a></li>
-    <li><a href="#projects">Projects</a></li>
+    <li><a href="#projects">Projects & Courseworks</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
 </nav>
@@ -811,7 +811,7 @@
         from real-world threats. Transitioning into Network & Security roles.
       </p>
       <div class="hero-ctas">
-        <a href="#projects" class="btn-primary">View Projects →</a>
+        <a href="#projects" class="btn-primary">View Projects & Courseworks →</a>
         <a href="#contact" class="btn-outline">Get In Touch</a>
       </div>
       <div class="hero-stats">
@@ -983,74 +983,116 @@
   <div class="container">
     <div class="fade-in">
       <p class="section-label">// portfolio</p>
-      <h2 class="section-title">Projects</h2>
+      <h2 class="section-title">Projects & Courseworks</h2>
 
       <div class="placeholder-note">
         💡 <strong>Tip:</strong> Replace screenshot placeholders with real images — drag your screenshot into Cursor, rename it e.g. <code style="background:rgba(0,229,160,0.1);padding:1px 6px;border-radius:2px;font-size:11px;">project1.png</code>, upload to GitHub, then update the <code style="background:rgba(0,229,160,0.1);padding:1px 6px;border-radius:2px;font-size:11px;">src</code> attribute.
       </div>
 
-      <!-- Project 1 — Full width featured -->
-      <div class="project-card project-featured">
+      <!-- COURSEWORK — Featured full-width -->
+      <div class="project-card project-featured" style="margin-bottom:1rem;">
         <div class="project-screenshot">
           <div class="screenshot-placeholder">
-            <div class="sp-label">[ screenshot / diagram ]</div>
-            <div class="sp-sub">Replace with your actual image:<br><code>src="images/homelab.png"</code></div>
+            <div class="sp-label">[ network topology diagram ]</div>
+            <div class="sp-sub">Add your lab photo or network diagram<br><code>src="images/net3207.png"</code></div>
           </div>
         </div>
         <div class="project-body">
           <div class="project-header">
-            <div class="project-title">Home Lab Network Setup</div>
-            <span class="project-badge badge-wip">In Progress</span>
+            <div class="project-title">NET3207 — Enterprise Network Management</div>
+            <span class="project-badge badge-done">Completed</span>
           </div>
           <p class="project-desc">
-            Built a segmented virtual network using VirtualBox with pfSense as the firewall/router, a Kali Linux attacker VM, and a Windows Server target. The lab simulates a real enterprise environment for practicing network monitoring, firewall rules, and intrusion detection.
+            Built and configured a full enterprise LAN from scratch at Sunway University using real Cisco hardware, Mikrotik router, VoIP PBX, IP CCTV, and a web server — all segmented across 3 VLANs. Achieved full inter-VLAN routing and internet access for all endpoints.
           </p>
           <div class="project-highlights">
             <div class="highlight-item">
-              <span class="h-label">What I did</span>
-              <span class="h-val">Configured VLANs, firewall rules, DHCP, and DNS on pfSense</span>
+              <span class="h-label">What I built</span>
+              <span class="h-val">Multi-VLAN LAN with Cisco Switch, Cisco 1941 Router (Router-on-a-Stick), Mikrotik internet gateway, Yeastar PBX, IP CCTV, Apache web server with local DNS</span>
             </div>
             <div class="highlight-item">
-              <span class="h-label">What I learned</span>
-              <span class="h-val">Network segmentation, traffic inspection, attack vs defense perspective</span>
+              <span class="h-label">Protocols configured</span>
+              <span class="h-val">802.1Q VLAN trunking, DHCP pools, EIGRP, Static routes, NAT/Masquerade, SIP/VoIP</span>
+            </div>
+            <div class="highlight-item">
+              <span class="h-label">Challenges solved</span>
+              <span class="h-val">DHCP not assigning IPs to PBX (fixed with static IP fallback), Mikrotik not providing internet (missing VLAN routes), IP camera requiring legacy IE plugin</span>
             </div>
           </div>
           <div class="skill-tags" style="margin:1rem 0;">
-            <span class="tag">pfSense</span>
-            <span class="tag">VirtualBox</span>
+            <span class="tag cyan">Cisco IOS</span>
             <span class="tag cyan">VLANs</span>
-            <span class="tag cyan">Networking</span>
-            <span class="tag">Kali Linux</span>
+            <span class="tag cyan">EIGRP</span>
+            <span class="tag">Mikrotik</span>
+            <span class="tag">VoIP / SIP</span>
+            <span class="tag">DHCP</span>
+            <span class="tag">NAT</span>
+            <span class="tag">Apache</span>
+            <span class="tag green">Sunway University</span>
           </div>
           <div class="project-links">
-            <a href="#" class="project-link">→ GitHub</a>
-            <a href="#" class="project-link">→ Write-up</a>
+            <a href="#" class="project-link">→ Full Report (PDF)</a>
           </div>
         </div>
       </div>
 
       <!-- Projects grid — 2 col -->
-      <div class="projects-grid" style="margin-top:1rem;">
+      <div class="projects-grid">
 
+        <!-- Home Lab -->
         <div class="project-card">
           <div class="project-screenshot project-screenshot-sm">
             <div class="screenshot-placeholder">
-              <div class="sp-label">[ TryHackMe badge / profile ]</div>
+              <div class="sp-label">[ home lab topology ]</div>
+              <div class="sp-sub"><code>src="images/homelab.png"</code></div>
+            </div>
+          </div>
+          <div class="project-body">
+            <div class="project-header">
+              <div class="project-title">Home Lab Network Setup</div>
+              <span class="project-badge badge-wip">In Progress</span>
+            </div>
+            <p class="project-desc">
+              Segmented virtual network using VirtualBox with pfSense firewall, Kali Linux attacker VM, and Windows Server target. Practicing firewall rules, network monitoring, and intrusion detection.
+            </p>
+            <div class="project-highlights">
+              <div class="highlight-item">
+                <span class="h-label">What I did</span>
+                <span class="h-val">Configured VLANs, firewall rules, DHCP and DNS on pfSense</span>
+              </div>
+            </div>
+            <div class="skill-tags" style="margin:0.75rem 0;">
+              <span class="tag">pfSense</span>
+              <span class="tag">VirtualBox</span>
+              <span class="tag cyan">VLANs</span>
+              <span class="tag">Kali Linux</span>
+            </div>
+            <div class="project-links">
+              <a href="#" class="project-link">→ GitHub</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- TryHackMe -->
+        <div class="project-card">
+          <div class="project-screenshot project-screenshot-sm">
+            <div class="screenshot-placeholder">
+              <div class="sp-label">[ TryHackMe profile / badge ]</div>
               <div class="sp-sub"><code>src="images/thm.png"</code></div>
             </div>
           </div>
           <div class="project-body">
             <div class="project-header">
               <div class="project-title">TryHackMe — Pre-Security Path</div>
-              <span class="project-badge badge-done">Completed</span>
+              <span class="project-badge badge-planned">Planned</span>
             </div>
             <p class="project-desc">
-              Completed the Pre-Security learning path covering networking basics, web fundamentals, and Linux command line. Documented write-ups for each room.
+              Actively working through the Pre-Security learning path — networking basics, Linux command line, and web fundamentals. Documenting write-ups for each room.
             </p>
             <div class="project-highlights">
               <div class="highlight-item">
-                <span class="h-label">Rooms done</span>
-                <span class="h-val">Networking, Linux Fundamentals, Web Fundamentals</span>
+                <span class="h-label">Topics</span>
+                <span class="h-val">Networking, Linux Fundamentals, Web Fundamentals, Intro to Cybersecurity</span>
               </div>
             </div>
             <div class="skill-tags" style="margin:0.75rem 0;">
@@ -1060,15 +1102,15 @@
             </div>
             <div class="project-links">
               <a href="#" class="project-link">→ THM Profile</a>
-              <a href="#" class="project-link">→ Write-ups</a>
             </div>
           </div>
         </div>
 
+        <!-- Wireshark -->
         <div class="project-card">
           <div class="project-screenshot project-screenshot-sm">
             <div class="screenshot-placeholder">
-              <div class="sp-label">[ Wireshark capture screenshot ]</div>
+              <div class="sp-label">[ Wireshark capture ]</div>
               <div class="sp-sub"><code>src="images/wireshark.png"</code></div>
             </div>
           </div>
@@ -1078,50 +1120,18 @@
               <span class="project-badge badge-planned">Planned</span>
             </div>
             <p class="project-desc">
-              Capture and analyze network packets from a simulated environment. Identify anomalies, extract credentials from unencrypted protocols, and document findings in a report.
+              Capture and analyze network packets from a simulated environment. Identify anomalies, extract credentials from unencrypted protocols, and document findings in a structured report.
             </p>
             <div class="project-highlights">
               <div class="highlight-item">
                 <span class="h-label">Goal</span>
-                <span class="h-val">Identify HTTP credentials, ARP spoofing, and suspicious DNS queries</span>
+                <span class="h-val">Detect HTTP credentials, ARP spoofing, suspicious DNS queries</span>
               </div>
             </div>
             <div class="skill-tags" style="margin:0.75rem 0;">
               <span class="tag">Wireshark</span>
               <span class="tag cyan">Packet Analysis</span>
               <span class="tag">TCP/IP</span>
-            </div>
-            <div class="project-links">
-              <a href="#" class="project-link">→ GitHub</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="project-card">
-          <div class="project-screenshot project-screenshot-sm">
-            <div class="screenshot-placeholder">
-              <div class="sp-label">[ Nmap scan output / report ]</div>
-              <div class="sp-sub"><code>src="images/nmap.png"</code></div>
-            </div>
-          </div>
-          <div class="project-body">
-            <div class="project-header">
-              <div class="project-title">Network Vulnerability Scanner</div>
-              <span class="project-badge badge-planned">Planned</span>
-            </div>
-            <p class="project-desc">
-              Using Nmap and OpenVAS to scan a lab environment, identify open ports and known CVEs, and produce a structured vulnerability report.
-            </p>
-            <div class="project-highlights">
-              <div class="highlight-item">
-                <span class="h-label">Output</span>
-                <span class="h-val">PDF vulnerability report with severity ratings and remediation steps</span>
-              </div>
-            </div>
-            <div class="skill-tags" style="margin:0.75rem 0;">
-              <span class="tag">Nmap</span>
-              <span class="tag">OpenVAS</span>
-              <span class="tag amber">CVE Research</span>
             </div>
             <div class="project-links">
               <a href="#" class="project-link">→ GitHub</a>
