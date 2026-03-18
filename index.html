@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Raymond — Cybersecurity Portfolio</title>
+<title>Your Name — Cybersecurity Portfolio</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600&family=Syne:wght@400;600;800&display=swap" rel="stylesheet">
 <style>
@@ -491,6 +491,80 @@
   .project-card:hover { border-color: var(--border2); transform: translateY(-3px); }
   .project-card:hover::before { transform: scaleX(1); }
 
+  /* Featured full-width project */
+  .project-featured {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    margin-bottom: 0;
+  }
+
+  @media (max-width: 700px) {
+    .project-featured { grid-template-columns: 1fr; }
+  }
+
+  /* Screenshot placeholder */
+  .project-screenshot {
+    border-right: 1px solid var(--border);
+    overflow: hidden;
+    min-height: 220px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--bg3);
+  }
+
+  .project-screenshot-sm {
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+    min-height: 140px;
+  }
+
+  .screenshot-placeholder {
+    text-align: center;
+    padding: 1.5rem;
+  }
+
+  .sp-label {
+    font-size: 12px;
+    color: var(--text3);
+    letter-spacing: 0.06em;
+    margin-bottom: 8px;
+  }
+
+  .sp-sub {
+    font-size: 11px;
+    color: var(--text3);
+    opacity: 0.6;
+    line-height: 1.6;
+  }
+
+  .project-body { padding: 1.5rem; }
+
+  /* Project highlights */
+  .project-highlights {
+    margin-top: 0.75rem;
+    border-left: 2px solid var(--border2);
+    padding-left: 12px;
+  }
+
+  .highlight-item { margin-bottom: 6px; }
+
+  .h-label {
+    display: block;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--green);
+    margin-bottom: 1px;
+  }
+
+  .h-val {
+    font-size: 12px;
+    color: var(--text2);
+    line-height: 1.6;
+  }
+
   .project-header {
     display: flex;
     justify-content: space-between;
@@ -679,6 +753,19 @@
     animation: blink 1s infinite;
   }
 
+  .hero-cursor {
+    display: inline-block;
+    color: var(--green);
+    font-family: var(--sans);
+    font-weight: 800;
+    animation: blink 0.8s infinite;
+    margin-left: 2px;
+  }
+
+  .role-prefix { color: var(--text3); font-size: 0.9rem; }
+
+  .role-cursor { color: var(--green); animation: blink 0.8s infinite; font-weight: 600; }
+
   @keyframes blink {
     0%, 100% { opacity: 1; }
     50% { opacity: 0; }
@@ -696,7 +783,7 @@
 
 <!-- NAV -->
 <nav>
-  <div class="nav-logo">Raymond<span>.sec</span></div>
+  <div class="nav-logo">YourName<span>.sec</span></div>
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
     <li><a href="#skills">Skills</a></li>
@@ -712,9 +799,12 @@
     <div class="hero-inner">
       <div class="hero-tag">Available for new opportunities</div>
       <h1 class="hero-name">
-        Your<br><span class="accent">Name</span>
+        Your<br><span class="accent" id="typed-name">Name</span><span class="hero-cursor">|</span>
       </h1>
-      <p class="hero-role">Aspiring Network & Security Engineer</p>
+      <p class="hero-role">
+        <span class="role-prefix">~/</span>
+        <span id="typed-role">Network Engineer</span><span class="role-cursor">_</span>
+      </p>
       <p class="hero-desc">
         Cybersecurity graduate with hands-on IT field experience. 
         Passionate about building secure networks and defending systems 
@@ -896,83 +986,149 @@
       <h2 class="section-title">Projects</h2>
 
       <div class="placeholder-note">
-        💡 <strong>Tip:</strong> Replace these placeholder projects with your real work — TryHackMe writeups, home lab setups, Wireshark captures, or any security experiments. Even small projects count!
+        💡 <strong>Tip:</strong> Replace screenshot placeholders with real images — drag your screenshot into Cursor, rename it e.g. <code style="background:rgba(0,229,160,0.1);padding:1px 6px;border-radius:2px;font-size:11px;">project1.png</code>, upload to GitHub, then update the <code style="background:rgba(0,229,160,0.1);padding:1px 6px;border-radius:2px;font-size:11px;">src</code> attribute.
       </div>
 
-      <div class="projects-grid">
-        <div class="project-card">
+      <!-- Project 1 — Full width featured -->
+      <div class="project-card project-featured">
+        <div class="project-screenshot">
+          <div class="screenshot-placeholder">
+            <div class="sp-label">[ screenshot / diagram ]</div>
+            <div class="sp-sub">Replace with your actual image:<br><code>src="images/homelab.png"</code></div>
+          </div>
+        </div>
+        <div class="project-body">
           <div class="project-header">
             <div class="project-title">Home Lab Network Setup</div>
             <span class="project-badge badge-wip">In Progress</span>
           </div>
           <p class="project-desc">
-            Built a segmented virtual network using VirtualBox with a pfSense firewall, Kali Linux attacker VM, and Windows Server target. Practicing network monitoring and intrusion detection.
+            Built a segmented virtual network using VirtualBox with pfSense as the firewall/router, a Kali Linux attacker VM, and a Windows Server target. The lab simulates a real enterprise environment for practicing network monitoring, firewall rules, and intrusion detection.
           </p>
-          <div class="skill-tags" style="margin-bottom:1rem;">
+          <div class="project-highlights">
+            <div class="highlight-item">
+              <span class="h-label">What I did</span>
+              <span class="h-val">Configured VLANs, firewall rules, DHCP, and DNS on pfSense</span>
+            </div>
+            <div class="highlight-item">
+              <span class="h-label">What I learned</span>
+              <span class="h-val">Network segmentation, traffic inspection, attack vs defense perspective</span>
+            </div>
+          </div>
+          <div class="skill-tags" style="margin:1rem 0;">
             <span class="tag">pfSense</span>
             <span class="tag">VirtualBox</span>
+            <span class="tag cyan">VLANs</span>
             <span class="tag cyan">Networking</span>
+            <span class="tag">Kali Linux</span>
           </div>
           <div class="project-links">
             <a href="#" class="project-link">→ GitHub</a>
             <a href="#" class="project-link">→ Write-up</a>
           </div>
         </div>
+      </div>
+
+      <!-- Projects grid — 2 col -->
+      <div class="projects-grid" style="margin-top:1rem;">
 
         <div class="project-card">
-          <div class="project-header">
-            <div class="project-title">TryHackMe — Pre-Security Path</div>
-            <span class="project-badge badge-done">Completed</span>
+          <div class="project-screenshot project-screenshot-sm">
+            <div class="screenshot-placeholder">
+              <div class="sp-label">[ TryHackMe badge / profile ]</div>
+              <div class="sp-sub"><code>src="images/thm.png"</code></div>
+            </div>
           </div>
-          <p class="project-desc">
-            Completed the Pre-Security learning path covering networking basics, web fundamentals, and Linux command line. Write-ups documented for each room.
-          </p>
-          <div class="skill-tags" style="margin-bottom:1rem;">
-            <span class="tag green">TryHackMe</span>
-            <span class="tag">Linux</span>
-            <span class="tag">Networking</span>
-          </div>
-          <div class="project-links">
-            <a href="#" class="project-link">→ THM Profile</a>
-            <a href="#" class="project-link">→ Write-ups</a>
+          <div class="project-body">
+            <div class="project-header">
+              <div class="project-title">TryHackMe — Pre-Security Path</div>
+              <span class="project-badge badge-done">Completed</span>
+            </div>
+            <p class="project-desc">
+              Completed the Pre-Security learning path covering networking basics, web fundamentals, and Linux command line. Documented write-ups for each room.
+            </p>
+            <div class="project-highlights">
+              <div class="highlight-item">
+                <span class="h-label">Rooms done</span>
+                <span class="h-val">Networking, Linux Fundamentals, Web Fundamentals</span>
+              </div>
+            </div>
+            <div class="skill-tags" style="margin:0.75rem 0;">
+              <span class="tag green">TryHackMe</span>
+              <span class="tag">Linux</span>
+              <span class="tag">Networking</span>
+            </div>
+            <div class="project-links">
+              <a href="#" class="project-link">→ THM Profile</a>
+              <a href="#" class="project-link">→ Write-ups</a>
+            </div>
           </div>
         </div>
 
         <div class="project-card">
-          <div class="project-header">
-            <div class="project-title">Wireshark Traffic Analysis</div>
-            <span class="project-badge badge-planned">Planned</span>
+          <div class="project-screenshot project-screenshot-sm">
+            <div class="screenshot-placeholder">
+              <div class="sp-label">[ Wireshark capture screenshot ]</div>
+              <div class="sp-sub"><code>src="images/wireshark.png"</code></div>
+            </div>
           </div>
-          <p class="project-desc">
-            Capture and analyze network packets from a simulated environment. Identify anomalies, extract credentials from unencrypted protocols, and document findings.
-          </p>
-          <div class="skill-tags" style="margin-bottom:1rem;">
-            <span class="tag">Wireshark</span>
-            <span class="tag cyan">Packet Analysis</span>
-            <span class="tag">TCP/IP</span>
-          </div>
-          <div class="project-links">
-            <a href="#" class="project-link">→ GitHub</a>
+          <div class="project-body">
+            <div class="project-header">
+              <div class="project-title">Wireshark Traffic Analysis</div>
+              <span class="project-badge badge-planned">Planned</span>
+            </div>
+            <p class="project-desc">
+              Capture and analyze network packets from a simulated environment. Identify anomalies, extract credentials from unencrypted protocols, and document findings in a report.
+            </p>
+            <div class="project-highlights">
+              <div class="highlight-item">
+                <span class="h-label">Goal</span>
+                <span class="h-val">Identify HTTP credentials, ARP spoofing, and suspicious DNS queries</span>
+              </div>
+            </div>
+            <div class="skill-tags" style="margin:0.75rem 0;">
+              <span class="tag">Wireshark</span>
+              <span class="tag cyan">Packet Analysis</span>
+              <span class="tag">TCP/IP</span>
+            </div>
+            <div class="project-links">
+              <a href="#" class="project-link">→ GitHub</a>
+            </div>
           </div>
         </div>
 
         <div class="project-card">
-          <div class="project-header">
-            <div class="project-title">Network Vulnerability Scanner</div>
-            <span class="project-badge badge-planned">Planned</span>
+          <div class="project-screenshot project-screenshot-sm">
+            <div class="screenshot-placeholder">
+              <div class="sp-label">[ Nmap scan output / report ]</div>
+              <div class="sp-sub"><code>src="images/nmap.png"</code></div>
+            </div>
           </div>
-          <p class="project-desc">
-            Using Nmap and OpenVAS to scan a lab environment, identify open ports and known CVEs, and produce a structured vulnerability report.
-          </p>
-          <div class="skill-tags" style="margin-bottom:1rem;">
-            <span class="tag">Nmap</span>
-            <span class="tag">OpenVAS</span>
-            <span class="tag amber">CVE Research</span>
-          </div>
-          <div class="project-links">
-            <a href="#" class="project-link">→ GitHub</a>
+          <div class="project-body">
+            <div class="project-header">
+              <div class="project-title">Network Vulnerability Scanner</div>
+              <span class="project-badge badge-planned">Planned</span>
+            </div>
+            <p class="project-desc">
+              Using Nmap and OpenVAS to scan a lab environment, identify open ports and known CVEs, and produce a structured vulnerability report.
+            </p>
+            <div class="project-highlights">
+              <div class="highlight-item">
+                <span class="h-label">Output</span>
+                <span class="h-val">PDF vulnerability report with severity ratings and remediation steps</span>
+              </div>
+            </div>
+            <div class="skill-tags" style="margin:0.75rem 0;">
+              <span class="tag">Nmap</span>
+              <span class="tag">OpenVAS</span>
+              <span class="tag amber">CVE Research</span>
+            </div>
+            <div class="project-links">
+              <a href="#" class="project-link">→ GitHub</a>
+            </div>
           </div>
         </div>
+
       </div>
     </div>
   </div>
@@ -1028,7 +1184,7 @@
         I'm actively looking for roles in Network Engineering or Security. 
         Feel free to reach out — I'd love to chat.
       </p>
-      <a href="mailto:yjhcareers@gmail.com" class="contact-email">yjhcareers@gmail.com</a>
+      <a href="/cdn-cgi/l/email-protection#1f66706a6d5f7a727e7673317c7072" class="contact-email"><span class="__cf_email__" data-cfemail="82fbedf7f0c2e7efe3ebeeace1edef">[email&#160;protected]</span></a>
       <div class="socials">
         <a href="https://linkedin.com/in/yourprofile" class="social-link" target="_blank">LinkedIn ↗</a>
         <a href="https://github.com/yourusername" class="social-link" target="_blank">GitHub ↗</a>
@@ -1046,28 +1202,62 @@
   // Scroll fade-in
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(el => {
-      if (el.isIntersecting) {
-        el.target.classList.add('visible');
-      }
+      if (el.isIntersecting) el.target.classList.add('visible');
     });
   }, { threshold: 0.1 });
-
   document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
-  // Typing effect for hero name
-  const name = document.querySelector('.hero-name .accent');
-  if (name) {
-    const text = name.textContent;
-    name.textContent = '';
+  // Typing animation for hero name
+  const nameEl = document.getElementById('typed-name');
+  const heroCursor = document.querySelector('.hero-cursor');
+  if (nameEl) {
+    const fullName = nameEl.textContent;
+    nameEl.textContent = '';
     let i = 0;
-    const type = () => {
-      if (i < text.length) {
-        name.textContent += text[i++];
-        setTimeout(type, 80);
+    const typeName = () => {
+      if (i < fullName.length) {
+        nameEl.textContent += fullName[i++];
+        setTimeout(typeName, 90);
+      } else {
+        setTimeout(() => {
+          if (heroCursor) heroCursor.style.display = 'none';
+          startRoleTyping();
+        }, 400);
       }
     };
-    setTimeout(type, 600);
+    setTimeout(typeName, 400);
   }
+
+  // Role switcher
+  const roles = ['Network Engineer', 'Security Analyst', 'SOC Analyst', 'IT Infrastructure'];
+  let roleIndex = 0;
+  const roleEl = document.getElementById('typed-role');
+
+  function typeRole(text, cb) {
+    roleEl.textContent = '';
+    let i = 0;
+    const t = setInterval(() => {
+      roleEl.textContent += text[i++];
+      if (i >= text.length) { clearInterval(t); setTimeout(cb, 1800); }
+    }, 70);
+  }
+
+  function eraseRole(cb) {
+    const t = setInterval(() => {
+      roleEl.textContent = roleEl.textContent.slice(0, -1);
+      if (!roleEl.textContent.length) { clearInterval(t); setTimeout(cb, 300); }
+    }, 40);
+  }
+
+  function startRoleTyping() {
+    typeRole(roles[roleIndex], () => {
+      eraseRole(() => {
+        roleIndex = (roleIndex + 1) % roles.length;
+        startRoleTyping();
+      });
+    });
+  }
+
 </script>
 </body>
 </html>
