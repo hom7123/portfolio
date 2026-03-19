@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Your Name — Cybersecurity Portfolio</title>
+<title>Raymond — Cybersecurity Portfolio</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600&family=Syne:wght@400;600;800&display=swap" rel="stylesheet">
 <style>
@@ -371,16 +371,16 @@
     font-size: 10px;
     letter-spacing: 0.06em;
     text-transform: uppercase;
-    padding: 3px 8px;
-    border-radius: 2px;
+    padding: 5px 10px;
+    border-radius: 6px;
     border: 1px solid var(--border2);
     color: var(--text2);
-    background: var(--bg);
+    background: rgba(30,42,48,0.5);
   }
 
-  .tag.green { border-color: rgba(0,229,160,0.3); color: var(--green); background: var(--green-faint); }
-  .tag.cyan { border-color: rgba(0,200,224,0.3); color: var(--cyan); background: rgba(0,200,224,0.04); }
-  .tag.amber { border-color: rgba(240,160,32,0.3); color: var(--amber); background: rgba(240,160,32,0.04); }
+  .tag.green { border-color: rgba(0,229,160,0.25); color: var(--green); background: rgba(0,229,160,0.08); }
+  .tag.cyan { border-color: rgba(0,200,224,0.25); color: var(--cyan); background: rgba(0,200,224,0.06); }
+  .tag.amber { border-color: rgba(240,160,32,0.25); color: var(--amber); background: rgba(240,160,32,0.06); }
 
   /* ====== EXPERIENCE ====== */
   .timeline { position: relative; padding-left: 24px; }
@@ -470,11 +470,12 @@
   .project-card {
     background: var(--bg);
     border: 1px solid var(--border);
-    border-radius: 4px;
+    border-radius: 6px;
     padding: 1.5rem;
-    transition: border-color 0.2s, transform 0.2s;
+    transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
     position: relative;
     overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.3);
   }
 
   .project-card::before {
@@ -488,19 +489,48 @@
     transition: transform 0.3s;
   }
 
-  .project-card:hover { border-color: var(--border2); transform: translateY(-3px); }
+  .project-card:hover { border-color: var(--border2); transform: translateY(-3px); box-shadow: 0 4px 12px rgba(0,0,0,0.35); }
   .project-card:hover::before { transform: scaleX(1); }
 
-  /* Featured full-width project */
+  /* Featured full-width project — vertical layout for diagram readability */
   .project-featured {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
     gap: 0;
     margin-bottom: 0;
+    padding: 0;
+  }
+
+  .project-featured .project-screenshot {
+    grid-column: 1;
+    min-height: 280px;
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+    padding: 1.5rem;
+    background: var(--bg3);
+    cursor: pointer;
+    transition: opacity 0.2s;
+  }
+
+  .project-featured .project-screenshot:hover { opacity: 0.95; }
+
+  .project-featured .project-screenshot img {
+    width: 100%;
+    height: 100%;
+    min-height: 240px;
+    object-fit: contain;
+    object-position: center;
+    display: block;
+  }
+
+  .project-featured .project-body {
+    padding: 1.75rem 1.75rem 2rem;
   }
 
   @media (max-width: 700px) {
-    .project-featured { grid-template-columns: 1fr; }
+    .project-featured .project-screenshot { min-height: 220px; padding: 1rem; }
+    .project-featured .project-body { padding: 1.25rem; }
   }
 
   /* Screenshot placeholder */
@@ -783,7 +813,7 @@
 
 <!-- NAV -->
 <nav>
-  <div class="nav-logo">YourName<span>.sec</span></div>
+  <div class="nav-logo">Raymond<span>.sec</span></div>
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
     <li><a href="#skills">Skills</a></li>
@@ -799,7 +829,7 @@
     <div class="hero-inner">
       <div class="hero-tag">Available for new opportunities</div>
       <h1 class="hero-name">
-        Your<br><span class="accent" id="typed-name">Name</span><span class="hero-cursor">|</span>
+        <span class="accent" id="typed-name">Raymond</span><span class="hero-cursor">|</span>
       </h1>
       <p class="hero-role">
         <span class="role-prefix">~/</span>
@@ -849,17 +879,17 @@
           <div class="t-line"><span class="t-prompt">~$</span><span class="t-cmd">cat about.json</span></div>
           <div class="t-blank"></div>
           <div class="t-line"><span class="t-output">{</span></div>
-          <div class="t-line"><span class="t-output">&nbsp;&nbsp;<span class="t-key">"name"</span>: <span class="t-val">"Your Full Name"</span>,</span></div>
+          <div class="t-line"><span class="t-output">&nbsp;&nbsp;<span class="t-key">"name"</span>: <span class="t-val">"Yong Jing Hom"</span>,</span></div>
           <div class="t-line"><span class="t-output">&nbsp;&nbsp;<span class="t-key">"degree"</span>: <span class="t-val">"Bachelor of Cybersecurity"</span>,</span></div>
-          <div class="t-line"><span class="t-output">&nbsp;&nbsp;<span class="t-key">"location"</span>: <span class="t-val">"Malaysia"</span>,</span></div>
-          <div class="t-line"><span class="t-output">&nbsp;&nbsp;<span class="t-key">"current_role"</span>: <span class="t-val">"IT Field Technician"</span>,</span></div>
+          <div class="t-line"><span class="t-output">&nbsp;&nbsp;<span class="t-key">"location"</span>: <span class="t-val">",Cheras, Selangor, Malaysia"</span>,</span></div>
+          <div class="t-line"><span class="t-output">&nbsp;&nbsp;<span class="t-key">"current_role"</span>: <span class="t-val">"IT Support Networking Engineer"</span>,</span></div>
           <div class="t-line"><span class="t-output">&nbsp;&nbsp;<span class="t-key">"target_role"</span>: <span class="t-val">"Network / Security Engineer"</span>,</span></div>
           <div class="t-line"><span class="t-output">&nbsp;&nbsp;<span class="t-key">"experience"</span>: {</span></div>
-          <div class="t-line"><span class="t-output">&nbsp;&nbsp;&nbsp;&nbsp;<span class="t-key">"field_deployments"</span>: <span class="t-val">"50+ POS network systems installed"</span>,</span></div>
+          <div class="t-line"><span class="t-output">&nbsp;&nbsp;&nbsp;&nbsp;<span class="t-key">"field_deployments"</span>: <span class="t-val">"100+ POS network systems installed"</span>,</span></div>
           <div class="t-line"><span class="t-output">&nbsp;&nbsp;&nbsp;&nbsp;<span class="t-key">"skills_applied"</span>: [<span class="t-val">"network config"</span>, <span class="t-val">"endpoint setup"</span>, <span class="t-val">"troubleshooting"</span>],</span></div>
           <div class="t-line"><span class="t-output">&nbsp;&nbsp;&nbsp;&nbsp;<span class="t-key">"environment"</span>: <span class="t-val">"live production, customer-facing"</span></span></div>
           <div class="t-line"><span class="t-output">&nbsp;&nbsp;},</span></div>
-          <div class="t-line"><span class="t-output">&nbsp;&nbsp;<span class="t-key">"currently_learning"</span>: [<span class="t-val">"CompTIA Network+"</span>, <span class="t-val">"TryHackMe"</span>, <span class="t-val">"Wireshark"</span>],</span></div>
+          <div class="t-line"><span class="t-output">&nbsp;&nbsp;<span class="t-key">"currently_learning"</span>: [<span class="t-val">"Networking & Security"</span>, <span class="t-val">"TryHackMe"</span>],</span></div>
           <div class="t-line"><span class="t-output">&nbsp;&nbsp;<span class="t-key">"open_to_work"</span>: <span class="t-val" style="color:var(--green)">true</span></span></div>
           <div class="t-line"><span class="t-output">}</span></div>
           <div class="t-blank"></div>
@@ -880,11 +910,12 @@
         <div class="skill-card">
           <span class="skill-icon">🛡️</span>
           <div class="skill-title">Security Fundamentals</div>
-          <p style="font-size:12px;color:var(--text2);line-height:1.7;">Studied CEH curriculum — covers threat modeling, vulnerability scanning, network attacks, and defensive strategies.</p>
+          <p style="font-size:12px;color:var(--text2);line-height:1.7;">Studied CEH COURSEWORK — covers threat modeling, vulnerability scanning, network attacks, and defensive strategies.</p>
           <div class="skill-tags">
             <span class="tag green">CEH Trained</span>
             <span class="tag green">Threat Analysis</span>
-            <span class="tag">Vulnerability Assessment</span>
+            <span class="tag green">Security & Network Tools</span>
+            <span class="tag green">Vulnerability Assessment</span>
           </div>
         </div>
         <div class="skill-card">
@@ -895,7 +926,7 @@
             <span class="tag cyan">TCP/IP</span>
             <span class="tag cyan">DNS / DHCP</span>
             <span class="tag cyan">Network Setup</span>
-            <span class="tag">Wireshark</span>
+            <span class="tag cyan">Wireshark</span>
           </div>
         </div>
         <div class="skill-card">
@@ -903,8 +934,9 @@
           <div class="skill-title">Systems & Hardware</div>
           <p style="font-size:12px;color:var(--text2);line-height:1.7;">1+ year deploying, configuring, and maintaining hardware and software systems for clients in production environments.</p>
           <div class="skill-tags">
-            <span class="tag">Windows OS</span>
-            <span class="tag">Hardware Troubleshoot</span>
+            <span class="tag cyan">Windows OS</span>
+            <span class="tag cyan">Linux OS</span>
+            <span class="tag amber">Hardware Troubleshoot</span>
             <span class="tag amber">POS Systems</span>
           </div>
         </div>
@@ -913,10 +945,12 @@
           <div class="skill-title">Tools & Platforms</div>
           <p style="font-size:12px;color:var(--text2);line-height:1.7;">Hands-on with industry-standard tools for security analysis, network monitoring, and system administration.</p>
           <div class="skill-tags">
+            <span class="tag cyan">Nmap</span>
+            <span class="tag cyan">Wireshark</span>
+            <span class="tag cyan">VirtualBox</span>
+            <span class="tag green">OpenVas</span>
+            <span class="tag green">Nessus</span>
             <span class="tag green">TryHackMe</span>
-            <span class="tag">Nmap</span>
-            <span class="tag">Wireshark</span>
-            <span class="tag">VirtualBox</span>
           </div>
         </div>
         <div class="skill-card">
@@ -924,9 +958,9 @@
           <div class="skill-title">Professional Skills</div>
           <p style="font-size:12px;color:var(--text2);line-height:1.7;">Customer-facing IT support. Strong communication, problem-solving under pressure, and documentation skills.</p>
           <div class="skill-tags">
-            <span class="tag">Client Support</span>
-            <span class="tag">Documentation</span>
-            <span class="tag">Bilingual (EN/MY)</span>
+            <span class="tag amber">Client Support</span>
+            <span class="tag cyan">Documentation</span>
+            <span class="tag green">Multilanguage(EN/MY/CN)</span>
           </div>
         </div>
         <div class="skill-card">
@@ -934,9 +968,8 @@
           <div class="skill-title">Currently Learning</div>
           <p style="font-size:12px;color:var(--text2);line-height:1.7;">Actively building skills toward Network+ and Security+ certifications, and practicing on CTF platforms.</p>
           <div class="skill-tags">
-            <span class="tag amber">CompTIA Net+</span>
-            <span class="tag amber">CompTIA Sec+</span>
-            <span class="tag amber">CTF Practice</span>
+            <span class="tag amber">Networking & Security</span>
+            <span class="tag amber">TryHackMe</span>
           </div>
         </div>
       </div>
@@ -952,25 +985,36 @@
       <h2 class="section-title">Experience & Education</h2>
       <div class="timeline">
         <div class="tl-item">
-          <div class="tl-date">March 2024 — Present</div>
-          <div class="tl-title">IT Field Technician</div>
-          <div class="tl-company">Your Company Name · Full-time</div>
+          <div class="tl-date">March 2025 — March 2026</div>
+          <div class="tl-title">IT Support Networking Engineer</div>
+          <div class="tl-company">Colmo Tech Sdn Bhd · Full-time</div>
           <ul class="tl-bullets">
-            <li>Deployed and configured network-connected POS systems for 50+ client sites in the F&B industry</li>
+            <li>Deployed and configured network-connected POS systems for 100+ client sites in the F&B industry</li>
             <li>Performed full network setup including IP configuration, router setup, and connectivity testing at each deployment</li>
             <li>Provided on-site and remote technical support for hardware and software incidents in live production environments</li>
-            <li>Delivered user training to clients on system operation, minimizing post-deployment support tickets</li>
+            <li>Delivered user training to clients on system operation, minimizing post-deployment support issues</li>
             <li>Diagnosed and resolved network, hardware, and OS-level issues under time pressure in customer-facing environments</li>
           </ul>
         </div>
         <div class="tl-item">
-          <div class="tl-date">2020 — 2023</div>
+          <div class="tl-date">2023 — 2025</div>
           <div class="tl-title">Bachelor of Cybersecurity</div>
-          <div class="tl-company">Your University Name</div>
+          <div class="tl-company">Sunway University</div>
           <ul class="tl-bullets">
             <li>Completed Certified Ethical Hacker (CEH) coursework covering penetration testing methodologies and network attack vectors</li>
             <li>Studied network security, cryptography, incident response, and digital forensics</li>
             <li>Hands-on labs in vulnerability assessment and security auditing</li>
+          </ul>
+        </div>
+        <div class="tl-item">
+          <div class="tl-date">2020 — 2022</div>
+          <div class="tl-title">Diploma in Information Technology</div>
+          <div class="tl-company">Sunway College</div>
+          <ul class="tl-bullets">
+            <li>Built a strong foundation in networking, database systems, and software development fundamentals</li>
+            <li>Completed practical coursework in system administration, troubleshooting, and IT support workflows</li>
+            <li>Worked on team-based projects that improved technical documentation, problem-solving, and communication skills</li>
+            <li>Developed hands-on experience with Windows/Linux environments, basic scripting, and network setup tasks</li>
           </ul>
         </div>
       </div>
@@ -991,11 +1035,8 @@
 
       <!-- COURSEWORK — Featured full-width -->
       <div class="project-card project-featured" style="margin-bottom:1rem;">
-        <div class="project-screenshot">
-          <div class="screenshot-placeholder">
-            <div class="sp-label">[ network topology diagram ]</div>
-            <div class="sp-sub">Add your lab photo or network diagram<br><code>src="images/net3207.png"</code></div>
-          </div>
+        <div class="project-screenshot" id="net3207-lightbox-trigger" role="button" tabindex="0" aria-label="Click to expand network topology diagram">
+          <img src="images/net3207.png" alt="NET3207 Enterprise Network Management - network topology diagram" data-lightbox-src="images/net3207.png">
         </div>
         <div class="project-body">
           <div class="project-header">
@@ -1194,7 +1235,7 @@
         I'm actively looking for roles in Network Engineering or Security. 
         Feel free to reach out — I'd love to chat.
       </p>
-      <a href="/cdn-cgi/l/email-protection#1f66706a6d5f7a727e7673317c7072" class="contact-email"><span class="__cf_email__" data-cfemail="82fbedf7f0c2e7efe3ebeeace1edef">[email&#160;protected]</span></a>
+      <a href="mailto:yjhcareers@gmail.com" class="contact-email">yjhcareers@gmail.com</a>
       <div class="socials">
         <a href="https://linkedin.com/in/yourprofile" class="social-link" target="_blank">LinkedIn ↗</a>
         <a href="https://github.com/yourusername" class="social-link" target="_blank">GitHub ↗</a>
@@ -1208,7 +1249,103 @@
   <p>Built with HTML/CSS/JS · Hosted on GitHub Pages · <span style="color:var(--green)">Open to work</span></p>
 </footer>
 
+<!-- Image Lightbox Modal -->
+<div id="lightbox-modal" class="lightbox" aria-hidden="true">
+  <div class="lightbox-backdrop"></div>
+  <div class="lightbox-content">
+    <button class="lightbox-close" aria-label="Close">×</button>
+    <img class="lightbox-img" src="" alt="">
+  </div>
+</div>
+
+<style>
+  .lightbox {
+    position: fixed; inset: 0;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+  }
+  .lightbox.is-open {
+    opacity: 1;
+    visibility: visible;
+  }
+  .lightbox-backdrop {
+    position: absolute; inset: 0;
+    background: rgba(10,13,15,0.75);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    cursor: pointer;
+  }
+  .lightbox-content {
+    position: relative;
+    max-width: 95vw;
+    max-height: 90vh;
+    animation: lightboxZoom 0.3s ease;
+  }
+  .lightbox-img {
+    max-width: 100%;
+    max-height: 90vh;
+    object-fit: contain;
+    border-radius: 4px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+  }
+  .lightbox-close {
+    position: absolute;
+    top: -40px; right: 0;
+    width: 36px; height: 36px;
+    border: none;
+    background: rgba(255,255,255,0.1);
+    color: var(--text);
+    font-size: 24px;
+    line-height: 1;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  .lightbox-close:hover {
+    background: rgba(255,255,255,0.2);
+  }
+  @keyframes lightboxZoom {
+    from { transform: scale(0.95); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+  }
+</style>
+
 <script>
+  // Lightbox — click to expand image
+  (function() {
+    const modal = document.getElementById('lightbox-modal');
+    const img = modal?.querySelector('.lightbox-img');
+    const backdrop = modal?.querySelector('.lightbox-backdrop');
+    const closeBtn = modal?.querySelector('.lightbox-close');
+    const trigger = document.getElementById('net3207-lightbox-trigger');
+    if (!modal || !img || !trigger) return;
+    const open = function(src) {
+      img.src = src;
+      modal.classList.add('is-open');
+      modal.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+    };
+    const close = function() {
+      modal.classList.remove('is-open');
+      modal.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+    };
+    trigger.addEventListener('click', function() {
+      const dataSrc = trigger.querySelector('img')?.getAttribute('data-lightbox-src') || trigger.querySelector('img')?.src;
+      if (dataSrc) open(dataSrc);
+    });
+    trigger.addEventListener('keydown', function(e) { if (e.key === 'Enter' || e.key === ' ') { trigger.click(); e.preventDefault(); } });
+    if (backdrop) backdrop.addEventListener('click', close);
+    if (closeBtn) closeBtn.addEventListener('click', close);
+    document.addEventListener('keydown', function(e) { if (e.key === 'Escape') close(); });
+  })();
+
   // Scroll fade-in
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(el => {
