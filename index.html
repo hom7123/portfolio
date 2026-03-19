@@ -151,7 +151,20 @@
 
   @media (max-width: 600px) {
     .nav-links { display: none; }
+    .container { padding: 0 1rem; }
+    section { padding: 3.5rem 0; }
+    .hero-name { font-size: clamp(2.1rem, 10vw, 2.8rem); }
+    .hero-role { font-size: 1rem; }
+    .hero-desc { font-size: 12px; }
     .hero-stats { gap: 1.5rem; flex-wrap: wrap; }
+    .project-featured .project-screenshot { min-height: 180px; padding: 1rem; }
+    .project-featured .project-screenshot img { min-height: 140px; }
+    .project-featured .project-body { padding: 1.1rem; }
+    .project-header { flex-direction: column; gap: 0.4rem; }
+    .project-badge { margin-left: 0; }
+    .contact-email { font-size: 1.7rem; }
+    .socials { gap: 0.6rem; }
+    .social-link { width: 100%; justify-content: center; }
     .skills-grid { grid-template-columns: 1fr; }
   }
 
@@ -483,7 +496,7 @@
         <div class="project-body">
           <div class="project-header">
             <div class="project-title">TryHackMe — Pre-Security Path</div>
-            <span class="project-badge badge-planned">Planned</span>
+            <span class="project-badge badge-wip">In Progress</span>
           </div>
           <p class="project-desc">
             Actively working through the Pre-Security learning path — networking basics, Linux command line, and web fundamentals. Documenting write-ups for each room.
